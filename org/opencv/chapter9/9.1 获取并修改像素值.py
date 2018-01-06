@@ -1,5 +1,5 @@
 """
-9.1获取并修改像素值
+9.1 获取并修改像素值
 """
 import cv2
 import numpy as np
