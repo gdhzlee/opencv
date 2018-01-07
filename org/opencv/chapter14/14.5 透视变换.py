@@ -13,6 +13,7 @@ cv2.warpPerspective(src, M, dsize[, dst[, flags[, borderMode[, borderValue]]]]) 
     M – 3\times 3 transformation matrix.
     dsize – size of the output image.
 """
+#TODO
 import cv2
 import numpy as np
 from matplotlib import pyplot as plt
@@ -27,7 +28,6 @@ x1 = 230;x2=350;
 y1 = 0;y2=136
 
 pts1 = np.float32([[x1,y1],[x2,y1],[x1,y2],[x2,y2]]);
-cv2.imshow("dsf",img([[x1,y1],[x2,y1],[x1,y2],[x2,y2]]))
 pts2 = np.float32([[0,0],[0,300],[0,300],[300,300]]);
 
 M = cv2.getPerspectiveTransform(pts1,pts2);
