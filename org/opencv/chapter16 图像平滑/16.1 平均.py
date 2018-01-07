@@ -10,5 +10,14 @@ from matplotlib import pyplot as plt
 
 img = cv2.imread("C:\\Users\\lee\\Desktop\\1.jpg");
 
+"""
+cv2.blur(src, ksize[, dst[, anchor[, borderType]]]) → dst
+Blurs an image using the normalized box filter 归一化滤波器.
+    src – input image; it can have any number of channels, which are processed independently, but the depth should be CV_8U, CV_16U, CV_16S, CV_32F or CV_64F.
+    ksize – blurring kernel size.
+"""
 blur = cv2.blur(img,(5,5));
 
+plt.subplot(1,2,1),plt.imshow(img),plt.title("src");
+plt.subplot(1,2,2),plt.imshow(blur),plt.title("blur");
+plt.show();
