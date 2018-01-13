@@ -23,17 +23,26 @@ cv2.findContours(image, mode, method[, contours[, hierarchy[, offset]]]) → ima
     image – Source, an 8-bit single-channel image. Non-zero pixels are treated as 1’s. Zero pixels remain 0’s, so the image is treated as binary . You can use compare() , inRange() , threshold() , adaptiveThreshold() , Canny() , and others to create a binary image out of a grayscale or color one. The function modifies the image while extracting the contours. If mode equals to CV_RETR_CCOMP or CV_RETR_FLOODFILL, the input can also be a 32-bit integer image of labels (CV_32SC1).
         接受的是二值图，不是灰度图。因此需要先将图像转换成灰度图，再进行二值化处理。
     mode –Contour retrieval mode (if you use Python see also a note below).轮廓的检索模式
-        CV_RETR_EXTERNAL retrieves only the extreme outer contours. It sets hierarchy[i][2]=hierarchy[i][3]=-1 for all the contours.
+        CV_RETR_EXTERNAL retrieves检索 only the extreme outer contours. It sets hierarchy[i][2]=hierarchy[i][3]=-1 for all the contours.
+            只检测外轮廓
         CV_RETR_LIST retrieves all of the contours without establishing any hierarchical relationships.
-        CV_RETR_CCOMP retrieves all of the contours and organizes them into a two-level hierarchy. At the top level, there are external boundaries of the components. At the second level, there are boundaries of the holes. If there is another contour inside a hole of a connected component, it is still put at the top level.
+            检测所有轮廓，但不是建立等级关系
+        CV_RETR_CCOMP retrieves all of the contours and organizes them into a two-level hierarchy. At the top level, there are external boundaries of the components. 
+                At the second level, there are boundaries of the holes. If there is another contour inside a hole of a connected component, it is still put at the top level.
+            建立两个等级的轮廓，上面的一层为外边界，里面的一层为内孔的边界信息。如果内孔内还有一个连通物体，这个物体的边界也在顶层。
         CV_RETR_TREE retrieves all of the contours and reconstructs a full hierarchy of nested contours. This full hierarchy is built and shown in the OpenCV contours.c demo.
+            建立一个等级树结构的轮廓。
     method –Contour approximation method (if you use Python see also a note below). 轮廓的检测方法
         CV_CHAIN_APPROX_NONE stores absolutely all the contour points. That is, any 2 subsequent points (x1,y1) and (x2,y2) of the contour will be either horizontal, vertical or diagonal neighbors, that is, max(abs(x1-x2),abs(y2-y1))==1.
+            保存物体边界上所有连续的轮廓点到 contours中
         CV_CHAIN_APPROX_SIMPLE compresses horizontal, vertical, and diagonal segments and leaves only their end points. For example, an up-right rectangular contour is encoded with 4 points.
+            仅保存轮廓的拐点信息
         CV_CHAIN_APPROX_TC89_L1,CV_CHAIN_APPROX_TC89_KCOS applies one of the flavors of the Teh-Chin chain approximation algorithm. See [TehChin89] for details.
+            使用 teh-chinl chain近似算法
     offset – Optional offset by which every contour point is shifted. This is useful if the contours are extracted from the image ROI and then they should be analyzed in the whole image context.
+        所有轮廓的信息相对于原始凸显搞得偏移量。
 """
-image, contours, hierarchy = cv2.findContours(thresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE); #会直接修改传入的图像
+image, contours, hierarchy = cv2.findContours(thresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_NONE); #会直接修改传入的图像
 """
 cv2.drawContours(image, contours, contourIdx, color[, thickness[, lineType[, hierarchy[, maxLevel[, offset]]]]]) → image
     image – Destination image.
@@ -44,7 +53,7 @@ cv2.drawContours(image, contours, contourIdx, color[, thickness[, lineType[, hie
 """
 #最后这两种方法结果是一样的，但是后边的知识会告诉你最后一种方法更有用。
 #img = cv2.drawContour(img, contours, -1, (0,255,0), 3); 绘制独立轮廓
-cv2.drawContours(img, contours, -1, (0,255,0), 1);
+cv2.drawContours(img, contours, -1, (0, 255, 0), 1);
 
 cv2.imshow("img", img);
 cv2.waitKey(3000);
