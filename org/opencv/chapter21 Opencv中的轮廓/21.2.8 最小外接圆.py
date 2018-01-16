@@ -30,5 +30,16 @@ Finds a circle of the minimum area enclosing a 2D point set.
 (x, y), radius = cv2.minEnclosingCircle(cnt);
 image = img.copy();
 image = cv2.circle(image, (int(x), int(y)), int(radius), (0, 0, 255), 1);
-cv2.imshow("image", cv2.pyrDown(image));cv2.waitKey(3000);
+cv2.imshow("image", cv2.pyrDown(image));
 
+
+"""
+使用的函数为cv2.ellipse()，返回值其实就是旋转边界矩形的内切圆。
+cv2.fitEllipse(points) → retval
+Fits an ellipse around a set of 2D points.
+    points –Input 2D point set
+"""
+image2 = img.copy();
+ellipse = cv2.fitEllipse(cnt);
+image2 = cv2.ellipse(image2, ellipse, (0, 0, 255), 1);
+cv2.imshow("image2",cv2.pyrDown(image2));cv2.waitKey(3000);
