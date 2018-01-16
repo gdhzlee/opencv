@@ -10,4 +10,24 @@ cv2.convexHull(points[, hull[, clockwise[, returnPoints]]]) → hull
     returnPoints – Operation flag. In case of a matrix, when the flag is true, the function returns convex hull points. Otherwise, it returns indices of the convex hull points. When the output array is std::vector, the flag is ignored, and the output depends on the type of the vector: std::vector<int> implies returnPoints=true, std::vector<Point> implies returnPoints=false.
         默认为True，返回凸包上点的坐标，如果设置为false，就会返回凸包对应轮廓上的点。
 """
+import cv2
+import numpy as np
 
+img  = cv2.imread("../../../resource/img/4.jpg");
+hsv = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY);
+ret, thresh = cv2.threshold(hsv, 127, 255, cv2.THRESH_BINARY);
+
+image, contours, hierarchy = cv2.findContours(thresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_NONE);
+#point is not numpy array, nerther a scalar. point既不是numpy的数组，也不是一个标量
+hull = cv2.convexHull(contours[0]);
+img = cv2.drawContours(img, contours, -1, (0, 255, 0), 1);
+imgRows, imgCols = img.shape[:2];
+img = cv2.resize(img, (int(0.5*imgCols), int(0.5*imgRows)), interpolation=cv2.INTER_CUBIC);
+cv2.imshow("img",img);cv2.waitKey(30000);
+
+"""
+cv2.isContourConvex(contour) → retval
+    contour –Input vector of 2D points
+    可以可以用来检测一个曲线是不是凸的。返回 True 或 False。
+"""
+print(cv2.isContourConvex(contours[0]));
