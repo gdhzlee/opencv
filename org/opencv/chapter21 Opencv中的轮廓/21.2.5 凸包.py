@@ -19,11 +19,19 @@ ret, thresh = cv2.threshold(hsv, 127, 255, cv2.THRESH_BINARY);
 
 image, contours, hierarchy = cv2.findContours(thresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_NONE);
 #point is not numpy array, nerther a scalar. point既不是numpy的数组，也不是一个标量
-hull = cv2.convexHull(contours[0]);
-img = cv2.drawContours(img, contours, -1, (0, 255, 0), 1);
-imgRows, imgCols = img.shape[:2];
-img = cv2.resize(img, (int(0.5*imgCols), int(0.5*imgRows)), interpolation=cv2.INTER_CUBIC);
-cv2.imshow("img",img);cv2.waitKey(30000);
+
+cnt = contours[0];
+area_max = cv2.contourArea(cnt);
+for cont in contours:
+    area = cv2.contourArea(cont);
+    if(area_max < area):
+        area_max = area;
+        cnt = cont;
+hull = cv2.convexHull(cnt);
+
+image = img.copy();
+image = cv2.drawContours(image, hull, -1, (0, 255, 0), 10);
+cv2.imshow("image",cv2.pyrDown(image));cv2.waitKey(3000);
 
 """
 cv2.isContourConvex(contour) → retval
