@@ -26,7 +26,7 @@ Flags specifying the color type of a loaded image:
     =0 Return a grayscale image.
     <0 Return the loaded image as is (with alpha channel).
 """
-img = cv2.imread("C:\\Users\\lee\\Desktop\\1.jpg",0);
+img = cv2.imread("../../../resource/img/1.jpg",0);
 """
 使用中值滤波消除噪点
 cv2.medianBlur(src, ksize[, dst]) → dst

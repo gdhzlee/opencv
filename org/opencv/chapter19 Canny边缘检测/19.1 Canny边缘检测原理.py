@@ -5,7 +5,7 @@ import cv2
 import numpy as np
 from matplotlib import pyplot as plt
 
-img = cv2.imread("C:\\Users\\lee\\Desktop\\1.jpg",0);
+img = cv2.imread("../../../resource/img/1.jpg",0);
 
 #19.1.1 噪声去除
 #由于边缘检测很容易受到噪声影响，所以第一步是使用5x5 的高斯滤波器去除噪声

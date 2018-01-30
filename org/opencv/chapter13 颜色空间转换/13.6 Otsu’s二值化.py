@@ -14,7 +14,7 @@ import cv2
 import numpy as np
 from matplotlib import pyplot as plt
 
-img = cv2.imread("C:\\Users\\lee\\Desktop\\1.jpg",0);
+img = cv2.imread("../../../resource/img/1.jpg",0);
 ret1, th1 = cv2.threshold(img,127,255,cv2.THRESH_BINARY)
 ret2, th2 = cv2.threshold(img,0,255,cv2.THRESH_BINARY+cv2.THRESH_OTSU);
 

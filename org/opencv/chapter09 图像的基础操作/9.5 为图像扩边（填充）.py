@@ -28,7 +28,7 @@ import numpy as np
 from matplotlib import pyplot as plt
 
 BLUE = [255,0,0]
-img = cv2.imread("C:\\Users\\lee\\Desktop\\1.jpg")
+img = cv2.imread("../../../resource/img/1.jpg")
 
 replicate = cv2.copyMakeBorder(img,50,50,50,50,cv2.BORDER_REPLICATE)
 reflect = cv2.copyMakeBorder(img,50,50,50,50,cv2.BORDER_REFLECT)

@@ -8,7 +8,7 @@ import cv2
 import numpy as np
 from matplotlib import pyplot as plt
 
-img = cv2.imread("C:\\Users\\lee\\Desktop\\1.jpg")
+img = cv2.imread("../../../resource/img/1.jpg")
 #拆分通道
 """
 Python: cv2.split(m[, mv]) → mv

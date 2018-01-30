@@ -18,7 +18,7 @@ y = np.uint8([10])
 print(cv2.add(x, y))
 print(x+y)
 
-img = cv2.imread("C:\\Users\\lee\\Desktop\\1.jpg")
+img = cv2.imread("../../../resource/img/1.jpg")
 cv2.imshow("img1",cv2.add(img,img))
 cv2.imshow("img2",img+img)
 cv2.waitKey(8000)

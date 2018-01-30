@@ -6,7 +6,7 @@ ROI 也是使用Numpy 索引来获得的。现在我们选择球的部分并把�
 import cv2
 import numpy as np
 
-img = cv2.imread("C:\\Users\\lee\\Desktop\\1.jpg")
+img = cv2.imread("../../../resource/img/1.jpg")
 #获取图像部分
 imgPart = img[0:100,0:100]
 cv2.imshow("imgPart",imgPart);

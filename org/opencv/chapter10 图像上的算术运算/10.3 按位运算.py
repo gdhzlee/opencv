@@ -8,7 +8,7 @@ import cv2
 import numpy as np
 from matplotlib import pyplot as plt
 
-img1 = cv2.imread("C:\\Users\\lee\\Desktop\\1.jpg")
+img1 = cv2.imread("../../../resource/img/1.jpg")
 img2 = img1[100,200,0:100]
 
 """
@@ -64,13 +64,13 @@ Parameters:
     mask – optional operation mask, 8-bit single channel array, that specifies elements of the output array to be changed.
     The function calculates the per-element bit-wise logical conjunctio
 """
-img1 = cv2.imread("C:\\Users\\lee\\Desktop\\1.jpg")
-img2 = cv2.imread("C:\\Users\\lee\\Desktop\\2.jpg")
+img1 = cv2.imread("../../../resource/img/1.jpg")
+img2 = cv2.imread("../../../resource/img/2.jpg")
 cv2.imshow("bitwise_and",cv2.bitwise_and(img1,img2))
 cv2.waitKey(2000)
 
-img1 = cv2.imread("C:\\Users\\lee\\Desktop\\1.jpg")
-img2 = cv2.imread("C:\\Users\\lee\\Desktop\\3.jpg")
+img1 = cv2.imread("../../../resource/img/1.jpg")
+img2 = cv2.imread("../../../resource/img/3.jpg")
 rows,cols,channels = img2.shape;
 roi = img1[0:rows,0:cols]
 

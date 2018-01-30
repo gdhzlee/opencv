@@ -6,8 +6,8 @@
 import cv2
 import numpy as np,sys
 
-A = cv2.imread("C:\\Users\\lee\\Desktop\\5.png");
-B = cv2.imread("C:\\Users\\lee\\Desktop\\6.png");
+A = cv2.imread("../../../resource/img/5.png");
+B = cv2.imread("../../../resource/img/6.png");
 
 G = A.copy();
 gpA = [G];

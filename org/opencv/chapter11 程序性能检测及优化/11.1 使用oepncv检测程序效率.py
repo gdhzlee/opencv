@@ -24,7 +24,7 @@ Parameters:
     dst – destination array of the same size and type as src.
     ksize – aperture linear size; it must be odd奇数 and greater than 1, for example: 3, 5, 7 ...
 """
-img1 = cv2.imread("C:\\Users\\lee\\Desktop\\1.jpg")
+img1 = cv2.imread("../../../resource/img/1.jpg")
 
 el = cv2.getTickCount()
 for i in range(5,49,2):

@@ -22,7 +22,7 @@ Parameters:
 import cv2
 import numpy as np
 
-img = cv2.imread("C:\\Users\\lee\\Desktop\\1.jpg");
+img = cv2.imread("../../../resource/img/1.jpg");
 resImg = cv2.resize(img, None, 2, 2 ,cv2.INTER_CUBIC);
 """
 Python 列表

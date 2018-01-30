@@ -20,7 +20,7 @@ import cv2
 import numpy as np
 from matplotlib import pyplot as plt;
 
-img = cv2.imread("C:\\Users\\lee\\Desktop\\1.jpg",0);
+img = cv2.imread("../../../resource/img/1.jpg",0);
 """
 cv2.Laplacian(src, ddepth[, dst[, ksize[, scale[, delta[, borderType]]]]]) → dst
 Calculates the Laplacian of an image.

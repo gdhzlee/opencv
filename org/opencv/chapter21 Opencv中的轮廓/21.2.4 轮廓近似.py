@@ -1,7 +1,7 @@
 import cv2;
 import numpy as np
 
-img = cv2.imread("C:\\Users\\lee\\Desktop\\3.jpg");
+img = cv2.imread("../../../resource/img/3.jpg");
 HSV = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY);
 # cv2.imshow("imggray", HSV);cv2.waitKey(0);
 ret, image = cv2.threshold(HSV, 127, 255, cv2.THRESH_BINARY);

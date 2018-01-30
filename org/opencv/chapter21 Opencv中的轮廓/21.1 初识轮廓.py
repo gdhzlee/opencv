@@ -14,7 +14,7 @@
 import cv2
 import numpy as np
 
-img = cv2.imread("C:\\Users\\lee\\Desktop\\1.jpg");
+img = cv2.imread("../../../resource/img/1.jpg");
 imggray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY);
 ret, thresh = cv2.threshold(imggray, 127, 255, 0);  #cv2.THRESH_BINARY=0
 cv2.imshow("thresh", thresh);

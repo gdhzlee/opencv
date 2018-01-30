@@ -20,7 +20,7 @@ pyrDown(InputArray src, OutputArray dst, Stream& stream=Stream::Null())
     dst – Destination image. Will have Size((src.cols+1)/2, (src.rows+1)/2) size and the same type as src .
 因为一旦使用cv2.pyrDown()，图像的分辨率就会降低，信息就会被丢失。
 """
-img = cv2.imread("C:\\Users\\lee\\Desktop\\1.jpg",0);
+img = cv2.imread("../../../resource/img/1.jpg",0);
 for i in range(4):
     img = cv2.pyrDown(img);
     cv2.imshow("img"+str(i),img);
@@ -33,7 +33,7 @@ pyrUp(InputArray src, OutputArray dst, Stream& stream=Stream::Null())
     src – Source image.
     dst – Destination image. Will have Size(src.cols*2, src.rows*2) size and the same type as src .
 """
-img = cv2.imread("C:\\Users\\lee\\Desktop\\1.jpg",0);
+img = cv2.imread("../../../resource/img/1.jpg",0);
 for i in range(5):
     img = cv2.pyrUp(img);
     cv2.imshow("img"+str(i),img);

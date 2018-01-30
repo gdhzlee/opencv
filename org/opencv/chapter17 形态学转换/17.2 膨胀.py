@@ -9,7 +9,7 @@ import cv2
 import numpy as np
 from matplotlib import pyplot as plt
 
-img = cv2.imread("C:\\Users\\lee\\Desktop\\4.jpg");
+img = cv2.imread("../../../resource/img/4.jpg");
 
 kernal = np.ones((5,5),np.uint8);
 erosion = cv2.erode(img,kernal,1);

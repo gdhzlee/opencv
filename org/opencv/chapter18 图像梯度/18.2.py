@@ -9,7 +9,7 @@ import cv2
 import numpy as np
 from matplotlib import pyplot as plt
 
-img = cv2.imread("C:\\Users\\lee\\Desktop\\4.jpg",0);
+img = cv2.imread("../../../resource/img/4.jpg",0);
 
 sobelx8u = cv2.Sobel(img,cv2.CV_8U,1,0,ksize=5);
 

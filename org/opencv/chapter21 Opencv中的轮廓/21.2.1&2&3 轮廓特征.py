@@ -11,7 +11,7 @@
 import cv2
 import numpy as np
 
-img = cv2.imread("C:\\Users\\lee\\Desktop\\3.jpg",0);
+img = cv2.imread("../../../resource/img/3.jpg",0);
 ret, thresh = cv2.threshold(img, 127, 255, 0);
 image, contours, hierarchy = cv2.findContours(thresh, 1, 2);
 

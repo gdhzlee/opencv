@@ -4,7 +4,7 @@
 import cv2
 import numpy as np
 
-img = cv2.imread("C:\\Users\\lee\\Desktop\\1.jpg")
+img = cv2.imread("../../../resource/img/1.jpg")
 #根据像素的行和列的坐标获取他的像素值
 #1、对于BGR图像，返回其BGR值
 px = img[100,100]

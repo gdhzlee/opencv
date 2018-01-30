@@ -11,7 +11,7 @@
 #TODO
 import cv2
 import numpy as np
-cap = cv2.VideoCapture("C:\\Users\\lee\\Desktop\\1.mp4")
+cap = cv2.VideoCapture("../../../resource/video/1.mp4")
 
 while(cap.isOpened()):
     ret,frame = cap.read();

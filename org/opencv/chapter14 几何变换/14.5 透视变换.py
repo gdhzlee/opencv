@@ -18,7 +18,7 @@ import cv2
 import numpy as np
 from matplotlib import pyplot as plt
 
-img = cv2.imread("C:\\Users\\lee\\Desktop\\1.jpg");
+img = cv2.imread("../../../resource/img/1.jpg");
 rows, cols = img.shape[:2];
 
 cv2.imshow("dst",img[0:int(rows/2)+9,230:350])

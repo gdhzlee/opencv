@@ -16,7 +16,7 @@ import cv2
 import numpy as np
 from matplotlib import pyplot as plt
 
-img = cv2.imread("C:\\Users\\lee\\Desktop\\4.jpg");
+img = cv2.imread("../../../resource/img/4.jpg");
 
 kernel = np.ones((5,5),np.uint8);
 #先进性腐蚀再进行膨胀就叫做开运算。就像我们上面介绍的那样，它被用来去除噪声。

@@ -18,8 +18,8 @@ Parameters:
 import cv2
 import numpy as np
 
-img1 = cv2.imread("C:\\Users\\lee\\Desktop\\1.jpg")
-img2 = cv2.imread("C:\\Users\\lee\\Desktop\\2.jpg")
+img1 = cv2.imread("../../../resource/img/1.jpg")
+img2 = cv2.imread("../../../resource/img/2.jpg")
 
 dst = cv2.addWeighted(img1,0.7,img2,0.3,0)
 

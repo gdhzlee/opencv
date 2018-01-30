@@ -17,7 +17,7 @@ cv2.threshold(src, thresh, maxval, type[, dst]) → retval, dst
 import cv2
 import numpy as np
 
-img = cv2.imread("C:\\Users\\lee\\Desktop\\1.jpg");
+img = cv2.imread("../../../resource/img/1.jpg");
 img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 ret, threshold = cv2.threshold(img, 127,255,cv2.THRESH_BINARY);
 

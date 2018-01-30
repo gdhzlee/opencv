@@ -7,7 +7,7 @@ import numpy as np
 
 #img.shape 可以获取图像的形状。他的返回值是一个包含行数，列数，通道数的元组。
 #如果图像是灰度图，返回值仅有行数和列数。所以通过检查这个返回值就可以知道加载的是灰度图还是彩色图。
-img = cv2.imread("C:\\Users\\lee\\Desktop\\1.jpg")
+img = cv2.imread("../../../resource/img/1.jpg")
 print(img.shape)
 
 print('--------------')

@@ -5,7 +5,7 @@ import numpy as np
 img = np.zeros((500,500),np.uint8);
 #在图像[100:200,100:200]处画一个白色方块
 img[100:200,100:200] = 255;
-img = cv2.imread("C:\\Users\\lee\\Desktop\\3.jpg",0);
+img = cv2.imread("../../../resource/img/3.jpg",0);
 
 #二值化处理
 ret, thresh = cv2.threshold(img, 127, 255, 0);
