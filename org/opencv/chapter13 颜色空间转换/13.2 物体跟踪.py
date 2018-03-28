@@ -13,7 +13,7 @@ import cv2
 import numpy as np
 cap = cv2.VideoCapture("../../../resource/video/1.mp4")
 
-while(cap.isOpened()):
+while cap.isOpened():
     ret,frame = cap.read();
     try:
         hsv = cv2.cvtColor(frame,cv2.COLOR_BGR2HSV)
@@ -41,7 +41,7 @@ while(cap.isOpened()):
     cv2.imshow("mask",mask)
     cv2.imshow("res",res)
     key = cv2.waitKey(5)&0xFF
-    if key==27:
+    if key == 27:
         break
 
 cv2.destroyAllWindows()
