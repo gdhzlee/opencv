@@ -9,7 +9,6 @@ import numpy as np
 from matplotlib import pyplot as plt
 
 img = cv2.imread("../../../resource/img/1.jpg");
-
 """
 cv2.blur(src, ksize[, dst[, anchor[, borderType]]]) → dst
 Blurs an image using the normalized box filter 归一化滤波器.

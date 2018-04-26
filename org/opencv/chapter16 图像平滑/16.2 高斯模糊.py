@@ -27,5 +27,9 @@ cv2.GaussianBlur(src, ksize, sigmaX[, dst[, sigmaY[, borderType]]]) → dst
 blur = cv2.GaussianBlur(img,(5,5),0);
 
 plt.subplot(1,2,1),plt.imshow(img),plt.title("src");
+plt.xticks([])
+plt.yticks([])
 plt.subplot(1,2,2),plt.imshow(blur),plt.title("Gaussianblur");
+plt.xticks([])
+plt.yticks([])
 plt.show();

@@ -6,7 +6,7 @@ import cv2
 import numpy as np
 from matplotlib import pyplot as plt
 
-img = cv2.imread("../../../resource/img/1.jpg",0);
+img = cv2.imread("../../../resource/img/9.jpg",0);
 """
 cv2.Canny(image, threshold1, threshold2[, edges[, apertureSize[, L2gradient]]]) → edges
     image – 8-bit input image.
@@ -28,24 +28,25 @@ minVal 和maxVal。当图像的灰度梯度高于maxVal 时被认为是真的边
 使用方程：Edge_Gradient (G) = |Gx^2| + |Gy^2|代替，默认值为False。
 """
 edges = cv2.Canny(img, 100, 200);
-cv2.namedWindow("image");
+cv2.namedWindow("canny");
 
 def nothing(x):
     pass;
 
-cv2.createTrackbar('minVal','image',0,255,nothing);
-cv2.createTrackbar("maxVal","image",0,255,nothing);
+cv2.createTrackbar('threshold1','canny',0,255,nothing);
+cv2.createTrackbar("threshold2","canny",0,255,nothing);
 
+cv2.imshow("src",cv2.pyrDown(img))
 edges1 = img;
 while(1):
 
-    cv2.imshow("image",edges1);
+    cv2.imshow("canny",cv2.pyrDown(edges1));
     k = cv2.waitKey(2)&0xFF
     if k==27:
         break;
 
-    minVal = cv2.getTrackbarPos("minVal","image");
-    maxVal = cv2.getTrackbarPos("maxVal","image");
+    minVal = cv2.getTrackbarPos("threshold1","canny");
+    maxVal = cv2.getTrackbarPos("threshold2","canny");
 
     edges1 = cv2.Canny(img,minVal,maxVal);
 
